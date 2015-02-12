@@ -157,7 +157,7 @@ LPD6803::LPD6803(uint16_t n, uint8_t dpin, uint8_t cpin) {
   clockPin = cpin;
   numLEDs = n;
 
-  pixels = (uint16_t *)malloc(numLEDs);
+  pixels = (uint16_t *)malloc(numLEDs * sizeof(uint16_t));
   for (uint16_t i=0; i< numLEDs; i++) {
     setPixelColor(i, 0, 0, 0);
   }
